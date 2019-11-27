@@ -18,7 +18,7 @@ Blockly.Python['mn_init'] = function (block) {
     var variable_inst = Blockly.Python.variableDB_.getName(block.getFieldValue('inst'), Blockly.Variables.NAME_TYPE);
     // TODO: Assemble Python into code variable.
     define_mobilenet();
-    var code = variable_inst + '=PoseNetPB()\n';
+    var code = variable_inst + '=MobileNet()\n';
     return code;
 };
 
@@ -27,7 +27,7 @@ Blockly.Blocks['mn_run'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("从变量")
-            .appendField(new Blockly.FieldVariable("posenet"), "inst");
+            .appendField(new Blockly.FieldVariable("mobilenet"), "inst");
         this.appendDummyInput()
             .appendField("获取")
             .appendField(new Blockly.FieldVariable("result_dict"), "result_dict")
@@ -47,7 +47,7 @@ Blockly.Blocks['mn_run'] = {
 
 Blockly.Python['mn_run'] = function (block) {
     var variable_inst = Blockly.Python.variableDB_.getName(block.getFieldValue('inst'), Blockly.Variables.NAME_TYPE);
-    var variable_keypoint_dict = Blockly.Python.variableDB_.getName(block.getFieldValue('keypoint_dict'), Blockly.Variables.NAME_TYPE);
+    var variable_keypoint_dict = Blockly.Python.variableDB_.getName(block.getFieldValue('result_dict'), Blockly.Variables.NAME_TYPE);
     var checkbox_play_back = block.getFieldValue('play_back') == 'TRUE';
     var statements_sub_code = Blockly.Python.statementToCode(block, 'sub_code');
     // TODO: Assemble Python into code variable.

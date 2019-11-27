@@ -1,0 +1,4 @@
+<category name="物体识别" colour="#FFDAB9">
+<block type="mn_init"></block>
+<block type="mn_run"></block>
+</category>

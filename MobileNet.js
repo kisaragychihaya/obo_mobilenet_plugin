@@ -1,5 +1,5 @@
 let define_mobilenet = function () {
-    Blockly.Python.definitions_.mn = "from MobileNet import *"
+    Blockly.Python.definitions_.mn = "from FastMobileNet import *"
 };
 Blockly.Blocks['mn_init'] = {
     init: function () {

@@ -52,7 +52,7 @@ Blockly.Python['mn_run'] = function (block) {
     var statements_sub_code = Blockly.Python.statementToCode(block, 'sub_code');
     // TODO: Assemble Python into code variable.
     var code="";
-    define_posenet();
+    define_mobilenet();
     if (checkbox_play_back) {
         code = 'for ' + variable_keypoint_dict + ' in ' + variable_inst + '.process(playback=False,save_path="/tmp/ajax-cam.jpg"):\n';
     } else {
